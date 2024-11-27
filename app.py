@@ -4,6 +4,10 @@ import sqlite3
 
 app = Flask(__name__)
 
+HOST = "0.0.0.0"
+
+PORT = 5000
+
 # Define the path to the database
 DATABASE = os.path.join(
     os.path.abspath(os.path.dirname(__file__)), 
@@ -72,4 +76,4 @@ def initdb():
     return 'Database initialized!'
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host=HOST, port=PORT, debug=True)
